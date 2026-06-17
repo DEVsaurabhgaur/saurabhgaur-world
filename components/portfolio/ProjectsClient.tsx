@@ -206,7 +206,7 @@ export default function ProjectsClient({ projects }: Props) {
                     <input
                       type="text"
                       value={githubSearch}
-                      onChange={(e) => setSearch(e.target.value)}
+                      onChange={(e) => setGithubSearch(e.target.value)}
                       placeholder="FILTER REPOS..."
                       onClick={(e) => e.stopPropagation()}
                       className="w-full pl-6 pr-2 py-1 bg-slate-950/80 border border-slate-800 rounded outline-none text-[9px] font-mono tracking-widest text-cyan-400 placeholder-slate-600 focus:border-cyan-500/30 transition-colors"
