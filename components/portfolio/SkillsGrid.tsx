@@ -21,6 +21,7 @@ const SKILL_GROUPS: SkillGroup[] = [
       'Stable Diffusion',
       'Midjourney',
       'RAG',
+      'Hugging Face',
     ],
   },
   {
