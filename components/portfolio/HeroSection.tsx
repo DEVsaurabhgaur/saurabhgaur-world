@@ -25,6 +25,7 @@ export default function HeroSection() {
   const [glitchActive, setGlitchActive] = useState(false)
   const [cpuUsage, setCpuUsage] = useState(24.5)
   const [memUsage, setMemUsage] = useState(54.2)
+  const [netLatency, setNetLatency] = useState(18)
   const [currentTime, setCurrentTime] = useState('')
   const [hudLogs, setHudLogs] = useState<string[]>([
     'SYS: ENGINE CORE HANDSHAKE STABLE (200ms)...',
@@ -63,6 +64,7 @@ export default function HeroSection() {
     const diagTimer = setInterval(() => {
       setCpuUsage((prev) => Math.max(12, Math.min(95, prev + (Math.random() - 0.5) * 8)))
       setMemUsage((prev) => Math.max(45, Math.min(75, prev + (Math.random() - 0.5) * 2)))
+      setNetLatency((prev) => Math.max(4, Math.min(180, prev + (Math.random() - 0.5) * 12)))
     }, 2000)
 
     const logTimer = setInterval(() => {
@@ -446,6 +448,21 @@ export default function HeroSection() {
                   <div
                     className="bg-orange-500 h-full transition-all duration-500 shadow-[0_0_8px_#ff6b00]"
                     style={{ width: `${memUsage}%` }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <span className="text-slate-400 flex items-center gap-1.5"><Radio size={12} /> NET_LATENCY_MS</span>
+                  <span className={`font-bold ${netLatency < 40 ? 'text-emerald-400' : netLatency < 100 ? 'text-yellow-400' : 'text-rose-400'}`}>
+                    {netLatency.toFixed(0)} ms
+                  </span>
+                </div>
+                <div className="w-full bg-cyan-950/50 h-2.5 rounded overflow-hidden border border-emerald-500/10">
+                  <div
+                    className={`h-full transition-all duration-700 ${netLatency < 40 ? 'bg-emerald-400 shadow-[0_0_8px_#00ff88]' : netLatency < 100 ? 'bg-yellow-400 shadow-[0_0_8px_#facc15]' : 'bg-rose-500 shadow-[0_0_8px_#f43f5e]'}`}
+                    style={{ width: `${Math.min(100, (netLatency / 180) * 100)}%` }}
                   />
                 </div>
               </div>
