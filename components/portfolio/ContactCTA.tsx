@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
+import { Mail, Linkedin, Github } from 'lucide-react'
 
 export default function ContactCTA() {
   return (
@@ -41,6 +41,32 @@ export default function ContactCTA() {
           >
             Contact Form
           </Link>
+          <a
+            href="https://linkedin.com/in/saurabhkgaur"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded text-sm font-medium transition-all duration-150 hover:border-blue-500/50 hover:text-blue-400"
+            style={{
+              border: '1px solid var(--border)',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            <Linkedin size={15} />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/DEVsaurabhgaur"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded text-sm font-medium transition-all duration-150 hover:border-slate-400/50 hover:text-slate-200"
+            style={{
+              border: '1px solid var(--border)',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            <Github size={15} />
+            GitHub
+          </a>
         </div>
       </div>
     </section>
