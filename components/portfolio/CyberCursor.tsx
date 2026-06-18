@@ -58,11 +58,16 @@ export default function CyberCursor() {
       setVisible(false)
     }
 
+    const handleClick = () => {
+      playClick()
+    }
+
     // Add pointer fine style to hide default cursor
     document.body.classList.add('custom-cursor-active')
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('mouseover', handleMouseOver, { passive: true })
+    window.addEventListener('mousedown', handleClick)
     document.addEventListener('mouseleave', handleMouseLeave)
 
     // Butter-smooth direct LERP loop
@@ -98,10 +103,11 @@ export default function CyberCursor() {
       document.body.classList.remove('custom-cursor-active')
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseover', handleMouseOver)
+      window.removeEventListener('mousedown', handleClick)
       document.removeEventListener('mouseleave', handleMouseLeave)
       if (rafId.current) cancelAnimationFrame(rafId.current)
     }
-  }, [visible])
+  }, [])
 
   if (isMobile || !visible) return null
 
@@ -163,4 +169,3 @@ export default function CyberCursor() {
     </div>
   )
 }
-
