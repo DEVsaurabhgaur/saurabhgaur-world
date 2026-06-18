@@ -5,7 +5,7 @@ import { playClick } from '@/lib/audio'
 import { useTextScramble } from '@/hooks/useTextScramble'
 
 const STATS = [
-  { value: '4+', label: 'Years Engineering', percentage: 80, color: 'var(--accent)' },
+  { value: '5+', label: 'Years Engineering', percentage: 85, color: 'var(--accent)' },
   { value: '200+', label: 'Artworks Created', percentage: 95, color: 'var(--accent2)' },
   { value: 'Frontier', label: 'Model Evaluation', percentage: 90, color: 'var(--purple)' },
   { value: 'B.Tech', label: 'CSE Graduate 2025', percentage: 100, color: 'var(--success)' },
