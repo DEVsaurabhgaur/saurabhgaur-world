@@ -30,6 +30,7 @@ export default function ArtCard({ product }: Props) {
           <img
             src={product.thumbnail_url}
             alt={product.title}
+            loading="lazy"
             className="w-full object-cover transition-transform duration-300 group-hover:scale-105"
             style={{ display: 'block' }}
             onError={(e) => {
@@ -90,6 +91,7 @@ export default function ArtCard({ product }: Props) {
         <button
           onClick={() => !inCart && add(product)}
           disabled={inCart}
+          aria-label={inCart ? `${product.title} is in cart` : `Add ${product.title} to cart`}
           className="mt-auto flex items-center justify-center gap-2 w-full py-2 rounded text-xs font-medium transition-all duration-150"
           style={{
             background: inCart ? 'rgba(34,197,94,0.1)' : 'var(--bg-secondary)',
