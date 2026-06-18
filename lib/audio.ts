@@ -63,6 +63,11 @@ export function playClick() {
   playTone(1800, 'sine', 0.05, 0.03)
 }
 
+/** Softer, higher hover blip — distinct from the sharper click tone */
+export function playHover() {
+  playTone(2400, 'sine', 0.03, 0.015)
+}
+
 export function playKeypress() {
   playTone(1400, 'sine', 0.03, 0.015)
 }
