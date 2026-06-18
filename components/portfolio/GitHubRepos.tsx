@@ -55,8 +55,21 @@ export default function GitHubRepos() {
       case 'css': return '#8B5CF6'
       case 'html': return '#EF4444'
       case 'shell': return '#E8593C'
+      case 'rust': return '#FF6B2B'
+      case 'go': return '#00ADD8'
       default: return '#7A9BB5'
     }
+  }
+
+  const getRelativeTime = (iso: string) => {
+    const diff = Date.now() - new Date(iso).getTime()
+    const days = Math.floor(diff / 86400000)
+    if (days === 0) return 'today'
+    if (days === 1) return '1d ago'
+    if (days < 30) return `${days}d ago`
+    const months = Math.floor(days / 30)
+    if (months < 12) return `${months}mo ago`
+    return `${Math.floor(months / 12)}y ago`
   }
 
   return (
@@ -148,6 +161,9 @@ export default function GitHubRepos() {
                     {repo.forks_count}
                   </span>
                 )}
+
+                {/* Updated */}
+                <span className="ml-auto text-slate-600">{getRelativeTime(repo.updated_at)}</span>
               </div>
             </a>
           ))}
