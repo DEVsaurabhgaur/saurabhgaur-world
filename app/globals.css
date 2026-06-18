@@ -546,3 +546,24 @@ body::before {
   0% { transform: translateY(-10px); }
   100% { transform: translateY(100vh); }
 }
+
+/* =============================================
+   Skeleton / Shimmer loading state
+   Usage: <div class="skeleton w-full h-6 rounded" />
+   ============================================= */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 25%,
+    rgba(0, 245, 255, 0.06) 50%,
+    var(--bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 4px;
+}
