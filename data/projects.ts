@@ -2,6 +2,129 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    slug: 'hireos',
+    title: 'HireOS',
+    subtitle: 'AI Resume Intelligence Platform — LIVE',
+    tags: ['LangGraph', 'Python', 'FastAPI', 'Gemini 2.0 Flash', 'Razorpay'],
+    period: 'Apr 2026 – Present',
+    liveUrl: 'https://hire-os-langgraph.vercel.app',
+    repoUrl: 'https://github.com/DEVsaurabhgaur/HireOS_Langgraph',
+    description:
+      'AI resume intelligence platform built with LangGraph + Gemini 2.0 Flash — rewrites resumes with exact ATS keywords from job descriptions. Free tier + Rs 199 premium AI rewriter.',
+    longDescription: `
+## Overview
+
+HireOS is a production AI resume intelligence platform that goes beyond scoring — it actively rewrites resumes with exact ATS keywords extracted from job descriptions. Built with LangGraph multi-agent orchestration and Google Gemini 2.0 Flash.
+
+## Features
+
+**Free Tier:**
+- Resume score vs job description
+- Strengths & gaps analysis
+- Interview question generation
+- Practice mode
+- Candidate ranking (up to 10 resumes)
+
+**Premium (Rs 199 one-time via Razorpay):**
+- AI resume rewriter with exact ATS keyword injection
+- ATS keyword extraction engine
+- Cover letter opening generator
+
+## Architecture
+
+LangGraph orchestrates a multi-node agent pipeline:
+1. **Extraction Agent** — Parses job description for required skills, keywords, and role requirements
+2. **Analysis Agent** — Compares resume against extracted requirements, scores alignment
+3. **Rewrite Agent** — Produces an ATS-optimised resume rewrite with keyword injection
+
+Razorpay handles UPI/card payments. Python FastAPI backend with Vercel deployment.
+    `.trim(),
+    highlights: [
+      'LangGraph multi-agent orchestration with Gemini 2.0 Flash',
+      'ATS keyword extraction + resume rewriter in premium tier',
+      'Razorpay UPI/card payment integration for Rs 199 unlock',
+      'Candidate batch ranking — compare up to 10 resumes',
+    ],
+    thumbnail: '/images/projects/hireos.jpg',
+  },
+  {
+    slug: 'kundali-ai',
+    title: 'KundaliAI',
+    subtitle: 'Vedic Astrology Web App with Real Planetary Geometry',
+    tags: ['TanStack Start', 'TypeScript', 'Gemini AI', 'Supabase', 'Framer Motion'],
+    period: '2025 – Present',
+    repoUrl: 'https://github.com/DEVsaurabhgaur/KundaliAI',
+    description:
+      'Vedic astrology web app that computes real planetary geometry then uses Gemini 1.5 Flash for personalized readings. Features animated cosmic UI, Supabase-backed saved Kundalis with RLS, and PDF export.',
+    longDescription: `
+## Overview
+
+KundaliAI is a full-stack Vedic astrology web app that combines real astronomical computation with AI-generated personalized readings. It computes actual planetary positions using birth date, time, and location — then feeds the chart data to Gemini 1.5 Flash for in-depth personality, career, love, and health readings.
+
+## Technical Stack
+
+- **Framework:** TanStack Start with Vite (TypeScript)
+- **Styling:** Tailwind CSS + Framer Motion for cosmic animations
+- **AI:** Google Gemini 1.5 Flash
+- **Database:** Supabase with Row Level Security
+- **Validation:** Zod type-safe schemas
+- **Export:** Instant PDF export of Kundali charts
+
+## Key Features
+
+- Real planetary geometry computation (geocoordinate-based)
+- Animated cosmic UI with constellation effects
+- Supabase-backed persistent saved Kundalis per user
+- Personalized AI readings: personality, career, love, health
+- Type-safe routing with TanStack Router
+- PDF export with chart + interpretations
+    `.trim(),
+    highlights: [
+      'Real planetary geometry computation using birth coordinates',
+      'Gemini 1.5 Flash for personality/career/love/health readings',
+      'Supabase RLS-protected saved Kundalis per user',
+      'Animated cosmic UI with Framer Motion + instant PDF export',
+    ],
+    thumbnail: '/images/projects/kundali.jpg',
+  },
+  {
+    slug: 'laptop-pulse',
+    title: 'LaptopPulse',
+    subtitle: 'Windows Hardware Health Monitor — BETA',
+    tags: ['Python', 'Flask', 'React', 'TypeScript', 'AI Health Reports'],
+    period: '2025 – Present',
+    repoUrl: 'https://github.com/DEVsaurabhgaur/LaptopPulse',
+    description:
+      'Windows background daemon for laptop hardware health monitoring. <0.3% CPU usage, trend-based anomaly detection with 30–60 day early warning, AI-generated plain-English health reports. 100% local, zero telemetry.',
+    longDescription: `
+## Overview
+
+LaptopPulse is a lightweight Windows background service that monitors laptop hardware health in real time and provides AI-generated plain-English diagnostics. Built for users who want proactive failure warnings without cloud dependency.
+
+## Architecture
+
+- **Daemon:** Python background service monitoring CPU temp, battery wear, disk health, RAM usage
+- **Analytics:** Trend-based anomaly detection (rolling window + z-score) calibrated for 30–60 day early warning
+- **AI Reports:** Gemini/Claude generates plain-English health summaries from raw telemetry data
+- **Dashboard:** React + TypeScript local web dashboard served by Flask
+- **Privacy:** 100% local processing, zero telemetry, zero cloud calls (except optional AI report generation)
+
+## Performance
+
+- < 0.3% CPU usage while running in background
+- Battery wear trend analysis with projected replacement date
+- Disk health scoring with failure probability estimate
+- Thermal throttling detection and early warning alerts
+    `.trim(),
+    highlights: [
+      '<0.3% CPU usage as a background Windows daemon',
+      'Trend-based anomaly detection: 30–60 day early warning',
+      'AI-generated plain-English health reports (Gemini/Claude)',
+      '100% local — zero telemetry, zero cloud dependency',
+    ],
+    thumbnail: '/images/projects/laptoppulse.jpg',
+  },
+  {
     slug: 'openclaw-atlas',
     title: 'OpenClaw Atlas',
     subtitle: 'Multi-Server LLM Agent Evaluation Framework',
@@ -40,7 +163,7 @@ The framework produced a reusable evaluation benchmark applicable to future mode
     title: 'Frontier Model Benchmarking',
     subtitle: 'Cross-Model Comparative Analysis',
     tags: ['LLM Evaluation', 'Benchmarking', 'RLHF', 'Research'],
-    period: '2026',
+    period: '2025 – 2026',
     description:
       'Controlled evaluation of 4 frontier LLMs across 5 scoring dimensions — instruction following, multi-source synthesis, safety enforcement, coherence, and persistence.',
     longDescription: `
@@ -72,40 +195,6 @@ The resulting evaluation framework was adopted as a template for subsequent benc
     thumbnail: '/images/projects/benchmarking.jpg',
   },
   {
-    slug: 'ai-prompt-pipeline',
-    title: 'AI Prompt Engineering Pipeline',
-    subtitle: 'Annotated Image Dataset — 200+ Pieces',
-    tags: ['Stable Diffusion', 'Midjourney', 'Prompt Engineering', 'RLHF'],
-    period: '2024 – Present',
-    description:
-      '200+ item annotated AI image dataset with structured prompt metadata, category taxonomy, and quality rubrics — directly applicable to RLHF multimodal annotation pipelines.',
-    longDescription: `
-## Overview
-
-A systematically curated dataset of 200+ AI-generated images produced using Stable Diffusion and Midjourney, with each piece annotated with structured prompt metadata. The dataset was built as both a personal art practice and a professional asset — the annotation schema mirrors production RLHF multimodal pipelines.
-
-## Dataset Structure
-
-Each entry contains:
-- **Prompt** — Full generation prompt with parameter annotations
-- **Negative Prompt** — Exclusion terms and their rationale
-- **Model Version** — Specific checkpoint or Midjourney version used
-- **Category** — Taxonomy: Portrait / Cyberpunk / Anime / Abstract / Landscape / Conceptual
-- **Quality Score** — 1–5 rating against a defined rubric (composition, coherence, prompt adherence)
-- **Generation Notes** — Iterative refinement history
-
-## Relevance to RLHF
-
-The annotation schema was designed to be directly importable into multimodal RLHF workflows. Quality rubrics align with standard human preference criteria used in frontier model fine-tuning.
-    `.trim(),
-    highlights: [
-      'Structured prompt metadata, category taxonomy, quality criteria',
-      'Reproducible workflow with evaluation rubrics',
-      'Directly applicable to RLHF multimodal annotation pipelines',
-    ],
-    thumbnail: '/images/projects/ai-art-pipeline.jpg',
-  },
-  {
     slug: 'saurabhgaur-world',
     title: 'saurabhgaur.world',
     subtitle: 'Full-Stack Portfolio & AI Art Storefront',
@@ -129,11 +218,11 @@ This site itself — a dual-purpose platform that serves as a professional portf
 
 ## Commerce Architecture
 
-The purchase flow uses Razorpay's HMAC-signed order verification to ensure payment integrity. Post-payment fulfillment generates time-limited download tokens (72-hour expiry) stored in Supabase, which map to signed Supabase Storage URLs valid for 1 hour per download. This two-layer token system prevents URL sharing abuse while allowing multiple legitimate downloads within the window.
+The purchase flow uses Razorpay's HMAC-signed order verification to ensure payment integrity. Post-payment fulfillment generates time-limited download tokens (72-hour expiry) stored in Supabase, which map to signed Supabase Storage URLs valid for 1 hour per download.
 
 ## Admin System
 
-A protected \`/admin\` dashboard allows direct product management: upload art files and thumbnails to Supabase Storage, set prices, manage published state, and view order history — all without touching the database directly.
+A protected \`/admin\` dashboard allows direct product management: upload art files and thumbnails to Supabase Storage, set prices, manage published state, and view order history.
     `.trim(),
     highlights: [
       'UPI payment integration via Razorpay with HMAC signature verification',
@@ -142,43 +231,5 @@ A protected \`/admin\` dashboard allows direct product management: upload art fi
       'Admin dashboard for product management and order tracking',
     ],
     thumbnail: '/images/projects/portfolio.jpg',
-  },
-  {
-    slug: 'tata-python-tooling',
-    title: 'Python Automation & Anomaly Detection',
-    subtitle: 'Aerospace Manufacturing — Tata Advanced Systems',
-    tags: ['Python', 'Automation', 'Data Analysis', 'Manufacturing'],
-    period: '2022 – 2023',
-    company: 'Tata Advanced Systems Ltd.',
-    description:
-      'Production Python scripts for metric logging and anomaly detection in aerospace manufacturing workflows, reducing manual reporting overhead by ~35%.',
-    longDescription: `
-## Overview
-
-During an internship at Tata Advanced Systems Ltd. (aerospace manufacturing), developed a suite of Python automation tools for production metric logging and anomaly detection that were adopted into the process engineering team's standard workflow.
-
-## Tools Built
-
-**Metric Logging System**
-Automated extraction of production metrics from legacy data sources into a structured format, replacing manual data entry. Eliminated a class of recurring data entry errors caused by transcription from analog gauges.
-
-**Anomaly Detection Pipeline**
-Statistical anomaly detection on time-series production data — identifying out-of-spec measurements before they propagated to downstream processes. Used z-score and rolling-window methods calibrated against historical defect data.
-
-**Root-Cause Analysis Reports**
-Automated report generation that correlated anomaly occurrences with shift schedules, equipment IDs, and operator inputs — giving the process engineering team an immediate structured starting point for investigation.
-
-## Impact
-
-- ~35% reduction in manual reporting overhead
-- Elimination of recurring transcription errors
-- Root-cause analysis report format adopted as standard by the process engineering team
-    `.trim(),
-    highlights: [
-      'Reduced manual reporting overhead by ~35%',
-      'Eliminated recurring data entry errors via automated extraction',
-      'Root-cause analysis reports adopted by process engineering team',
-    ],
-    thumbnail: '/images/projects/tata.jpg',
   },
 ]

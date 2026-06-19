@@ -7,16 +7,32 @@ import { playClick } from '@/lib/audio'
 import { useTextScramble } from '@/hooks/useTextScramble'
 
 const SYSTEM_LOG_TEMPLATES = [
+  'SYS: LANGGRAPH AGENT WORKFLOW INITIALIZING — MULTI-NODE ACTIVE',
+  'SYS: GEMINI 2.0 FLASH INFERENCE PIPELINE ENGAGED',
+  'SYS: RAG PIPELINE RE-INDEXING FAISS EMBEDDINGS',
+  'SYS: HIREOS RESUME SCORER :: BATCH COMPLETE (10 CVs)',
   'SYS: BENCHMARKING FRONTIER MODEL ON INSTRUCTION-FOLLOWING',
-  'SYS: CORE SYNC COMPLETED WITH OUTLIER AI CORE',
+  'SYS: KUNDALI_AI CHART COMPUTATION :: GEOCOORD LOCKED',
+  'SYS: ATS KEYWORD EXTRACTION — COVER LETTER GENERATOR READY',
   'SYS: ERROR RECONCILED ON REMOTE NODE_4 (RE-ROUTE OK)',
-  'SYS: RAG PIPELINE RE-INDEXING EMBEDDINGS',
+  'SYS: AGENTIC TOOL-USE CHAIN :: MEMORY PERSISTENCE STABLE',
   'SYS: DYNAMIC ROUTING ENGAGED FOR AGENT-HARNESS',
-  'SYS: ACTIVE DECODING ENGAGED ON SDXL WEIGHTS',
-  'SYS: GENERATING SECURED STORAGE TOKENS',
+  'SYS: SUPABASE RLS POLICY VALIDATION — PASS',
   'SYS: METRIC ANOMALY VERIFICATION (z-score: 1.84)',
-  'SYS: EXECUTING DUAL-SERVER STORY CHECKOUTS',
-  'SYS: SEEDING STABLE SYNTHETIC DATASETS',
+  'SYS: RAZORPAY HMAC SIGNATURE VERIFIED — ORDER FULFILLED',
+  'SYS: SEEDING STABLE SYNTHETIC EVALUATION DATASETS',
+  'SYS: GPU OPTIMIZATION BENCHMARK :: vLLM THROUGHPUT +47%',
+]
+
+const TAGS = [
+  'LangGraph',
+  'RAG Systems',
+  'Gemini API',
+  'LLM Eval',
+  'Agentic AI',
+  'Next.js',
+  'FastAPI',
+  'Supabase',
 ]
 
 export default function HeroSection() {
@@ -27,16 +43,17 @@ export default function HeroSection() {
   const [memUsage, setMemUsage] = useState(54.2)
   const [netLatency, setNetLatency] = useState(18)
   const [currentTime, setCurrentTime] = useState('')
+  const [mounted, setMounted] = useState(false)
   const [hudLogs, setHudLogs] = useState<string[]>([
     'SYS: ENGINE CORE HANDSHAKE STABLE (200ms)...',
-    'SYS: LOAD BALANCER ACTIVE ON VIRTUAL SHIELDS...',
+    'SYS: LANGGRAPH MULTI-AGENT WORKFLOW :: ACTIVE.',
     'SYS: NEURAL INTERFACE STATUS :: SECURED.',
   ])
 
   // Text scramble hooks
   const { displayText: firstName, triggerScramble: scrambleFirst } = useTextScramble('SAURABH', true)
   const { displayText: lastName, triggerScramble: scrambleLast } = useTextScramble('GAUR', true)
-  const { displayText: subText, triggerScramble: scrambleSub } = useTextScramble('AI/ML ENGINEER & LLM EVALUATION SPECIALIST', true)
+  const { displayText: subText, triggerScramble: scrambleSub } = useTextScramble('AI ENGINEER & ARCHITECT | AGENTIC SYSTEMS | AI PRODUCTS', true)
 
   const triggerGlitchShake = () => {
     playClick()
@@ -45,6 +62,12 @@ export default function HeroSection() {
       document.body.classList.remove('screen-shake-active')
     }, 180)
   }
+
+  // Mount animation
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 50)
+    return () => clearTimeout(t)
+  }, [])
 
   // Telemetry updates loops
   useEffect(() => {
@@ -105,10 +128,10 @@ export default function HeroSection() {
     let animFrame: number
 
     const nodes = [
-      { r: 35, theta: 0.6, size: 2.5, label: 'NODE_01' },
-      { r: 60, theta: 2.1, size: 2, label: 'ATLAS_C' },
+      { r: 35, theta: 0.6, size: 2.5, label: 'HIREOS' },
+      { r: 60, theta: 2.1, size: 2, label: 'KUNDALI' },
       { r: 50, theta: 4.2, size: 3, label: 'EVAL_04' },
-      { r: 22, theta: 5.1, size: 2, label: 'SYS_BAL' },
+      { r: 22, theta: 5.1, size: 2, label: 'RAG_SYS' },
     ]
 
     const draw = () => {
@@ -216,7 +239,7 @@ export default function HeroSection() {
     }
 
     const COLORS = ['0, 245, 255', '255, 107, 0', '123, 47, 190']
-    const PARTICLE_COUNT = 60
+    const PARTICLE_COUNT = 80
     const particles: Particle[] = Array.from({ length: PARTICLE_COUNT }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -293,11 +316,11 @@ export default function HeroSection() {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 110) {
+          if (dist < 100) {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(0, 245, 255, ${0.07 * (1 - dist / 110)})`
+            ctx.strokeStyle = `rgba(0, 245, 255, ${0.07 * (1 - dist / 100)})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -331,19 +354,26 @@ export default function HeroSection() {
         {/* Left Column: Hero Text */}
         <div className="lg:col-span-7 space-y-6">
           
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded clip-cyber-sm select-none"
+          {/* Status Badge */}
+          <div
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded clip-cyber-sm select-none hero-enter"
             style={{
               background: 'rgba(0, 245, 255, 0.04)',
               border: '1px solid rgba(0, 245, 255, 0.25)',
               fontFamily: 'var(--font-mono)',
+              animationDelay: '0ms',
             }}>
             <span className="w-2 h-2 rounded-full" style={{ background: '#00FF88', boxShadow: '0 0 8px #00FF88', animation: 'blink 1.5s ease-in-out infinite' }} />
             <span className="text-[10px] tracking-widest uppercase font-bold" style={{ color: 'var(--accent)' }}>
-              CURRENTLY ENGINE :: OUTLIER.AI — CORE DEV
+              INDEPENDENT AI PRODUCT DEVELOPER · OPEN TO REMOTE
             </span>
           </div>
 
-          <div className="relative select-none">
+          {/* Name */}
+          <div
+            className="relative select-none hero-enter"
+            style={{ animationDelay: '80ms' }}
+          >
             <h1
               className="text-6xl sm:text-7xl md:text-8xl font-display leading-none tracking-wider transition-all duration-300"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
@@ -372,7 +402,8 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Divider */}
+          <div className="flex items-center gap-4 hero-enter" style={{ animationDelay: '160ms' }}>
             <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, var(--accent), transparent)', maxWidth: '180px', opacity: 0.4 }} />
             <span className="text-xs font-mono tracking-widest text-slate-400 font-bold">
               SYS-PROTOCOL :: SECURED
@@ -380,8 +411,9 @@ export default function HeroSection() {
             <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, var(--accent2), transparent)', maxWidth: '180px', opacity: 0.4 }} />
           </div>
 
-          <p className="text-sm font-mono tracking-wider max-w-xl leading-relaxed"
-            style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
+          {/* Subtitle */}
+          <p className="text-sm font-mono tracking-wider max-w-xl leading-relaxed hero-enter"
+            style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', animationDelay: '240ms' }}
             onMouseEnter={scrambleSub}
           >
             <span style={{ color: 'var(--accent)', marginRight: '8px' }}>{'>'}</span>
@@ -389,7 +421,8 @@ export default function HeroSection() {
             <span className="animate-blink font-bold text-cyan-400">_</span>
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 pt-4 hero-enter" style={{ animationDelay: '320ms' }}>
             <Link href="/projects" className="btn-primary clip-cyber-sm" onClick={triggerGlitchShake}>
               View Projects →
             </Link>
@@ -398,15 +431,22 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-2 pt-6">
-            {['LLM Eval', 'Agentic AI', 'RAG Pipelines', 'Next.js', 'Supabase', 'Stable Diffusion'].map((tag) => (
-              <span key={tag} className="tag-pill clip-cyber-sm" style={{ borderStyle: 'solid' }}>{tag}</span>
+          {/* Tag pills */}
+          <div className="flex flex-wrap gap-2 pt-6 hero-enter" style={{ animationDelay: '400ms' }}>
+            {TAGS.map((tag, i) => (
+              <span
+                key={tag}
+                className="tag-pill clip-cyber-sm"
+                style={{ borderStyle: 'solid', animationDelay: `${400 + i * 50}ms` }}
+              >
+                {tag}
+              </span>
             ))}
           </div>
         </div>
 
         {/* Right Column: High-tech Telemetry HUD dashboard */}
-        <div className="lg:col-span-5 w-full select-none">
+        <div className="lg:col-span-5 w-full select-none hero-enter" style={{ animationDelay: '200ms' }}>
           <div className="relative card p-6 bg-[#090f16]/80 border border-cyan-500/20 clip-cyber glow-glow cyber-corners">
             
             <div className="absolute inset-0 pointer-events-none crt-screen rounded-lg" style={{
@@ -417,7 +457,7 @@ export default function HeroSection() {
             <div className="flex items-center justify-between pb-4 border-b border-cyan-500/20 mb-5">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400">
                 <Activity size={14} className="animate-pulse" />
-                <span>TELEMETRY_DASHBOARD v4.0</span>
+                <span>TELEMETRY_DASHBOARD v4.1</span>
               </div>
               <div className="text-[10px] font-mono text-cyan-500/80 bg-cyan-950/30 px-2.5 py-0.5 rounded border border-cyan-500/20">
                 {currentTime || 'IST'}
@@ -492,13 +532,21 @@ export default function HeroSection() {
                     <p className="text-cyan-400 font-bold">AES_ENCRYPT_ON</p>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-1.5 bg-slate-950/30 border border-slate-800 p-1.5 rounded">
+                  <Activity size={12} className="text-purple-400 animate-pulse" />
+                  <div>
+                    <p className="text-slate-500">PRODUCTS_LIVE</p>
+                    <p className="text-purple-400 font-bold">HIREOS + MORE</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Scrolling Transaction Event Logs */}
             <div className="bg-slate-950/60 p-4 border border-cyan-500/10 rounded font-mono text-[10px] space-y-1.5 overflow-hidden h-[95px] flex flex-col justify-end">
               <span className="text-cyan-500/70 border-b border-cyan-500/10 pb-1.5 block font-bold tracking-wider">
-                {'>>'} RECENT TRANSACTIONS LOGGER:
+                {'>>'} SYSTEM EVENT LOGGER:
               </span>
               <div className="space-y-1">
                 {hudLogs.map((log, index) => (

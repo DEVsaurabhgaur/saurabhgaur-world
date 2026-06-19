@@ -41,7 +41,7 @@ function ScrambleNavLink({
       style={{
         fontFamily: 'var(--font-mono)',
         color: active ? 'var(--accent)' : 'var(--text-secondary)',
-        textShadow: active ? '0 0 10px rgba(0,245,255,0.5)' : 'none',
+        textShadow: active ? '0 0 12px rgba(0,245,255,0.6)' : 'none',
         letterSpacing: '0.1em',
       }}
       onMouseEnter={() => {
@@ -50,12 +50,15 @@ function ScrambleNavLink({
       }}
     >
       {displayText}
+      {/* Active indicator line with glow */}
       <span
-        className="absolute bottom-0 left-0 h-px transition-all duration-200"
+        className="absolute bottom-0 left-0 h-px transition-all duration-300"
         style={{
-          background: 'var(--accent)',
+          background: active
+            ? 'linear-gradient(to right, transparent, var(--accent), transparent)'
+            : 'var(--accent)',
           width: active ? '100%' : '0',
-          boxShadow: '0 0 6px rgba(0,245,255,0.8)',
+          boxShadow: active ? '0 0 8px rgba(0,245,255,0.8), 0 0 16px rgba(0,245,255,0.4)' : '0 0 6px rgba(0,245,255,0.8)',
         }}
       />
     </Link>
@@ -117,6 +120,7 @@ export default function Navbar() {
               href="/"
               className="font-display text-lg tracking-widest transition-all duration-200 flex items-center gap-1.5"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
+              title="Saurabh Kumar Gaur — AI Engineer & AI Product Developer"
               onMouseEnter={() => {
                 scrambleLogo()
                 playClick()

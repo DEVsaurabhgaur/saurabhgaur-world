@@ -8,6 +8,7 @@ export type Project = {
   highlights: string[]
   thumbnail: string
   githubUrl?: string
+  repoUrl?: string
   liveUrl?: string
   period: string
   company?: string
